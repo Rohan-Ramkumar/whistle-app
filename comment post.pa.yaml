@@ -1,0 +1,171 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  comment post:
+    Properties:
+      Fill: =RGBA(255, 255, 255, 1)
+      Height: =814
+      LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+      Width: =1280
+    Children:
+      - Rectangle2_2:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(196, 196, 196, 1)
+            FocusedBorderThickness: =4
+            Height: =720
+            HoverFill: =RGBA(196, 196, 196, 1)
+            PressedFill: =RGBA(196, 196, 196, 1)
+            Width: =1280
+            Y: =106
+      - txtComment:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderStyle: =BorderStyle.None
+            Clear: =true
+            Default: =""
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            Height: =347
+            HintText: ="Start Typing Here..."
+            HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            MaxLength: =45
+            Mode: =TextMode.MultiLine
+            OnSelect: =
+            PressedBorderColor: =RGBA(0, 120, 212, 1)
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Size: =30
+            Width: =1220
+            X: =30
+            Y: =120
+      - Button3_8:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 1)
+            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+            Font: =Font.'Lato Black'
+            Height: =53
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(0, 0, 0, 100), -10%)
+            OnSelect: |
+              =If(
+                  IsBlank( Trim(txtComment.Text) ),
+                  // ❌ nothing typed
+                  Notify(
+                      "Please enter a comment before posting.",
+                      NotificationType.Error
+                  ),
+                  // ✅ otherwise run your existing code:
+                  Patch(
+                      'Stored data',
+                      Defaults('Stored data'),
+                      {
+                          post_id: uniquePostID,
+                          comment_author: currentUserName,
+                          comment_text: txtComment.Text,
+                          post_date: Now()
+                      }
+                  );
+                  Set( words, Split( txtComment.Text, " " ) );
+                  Set( tags, Filter( words, Left( Value, 1 ) = "@" ) );
+                  Set( mentionedUsers, ForAll( tags, Mid( Value, 2, Len( Value ) - 1 ) ) );
+                  ForAll(
+                      mentionedUsers,
+                      Patch(
+                          'Stored data',
+                          Defaults('Stored data'),
+                          {
+                              mentioned_user: ThisRecord.Value,
+                              notification_text: "@" & currentUserName & " whistled at you in this post",
+                              notification_seen: false,
+                              post_id: uniquePostID,
+                              notification_date: Now()
+                          }
+                      )
+                  );
+                  Reset( txtComment );
+                  Navigate( 'Community feed', ScreenTransition.Fade )
+              )
+            PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -50%)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =ColorFade(RGBA(0, 0, 0, 100), -30%)
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Size: =25
+            Text: ="Post."
+            Width: =188
+            X: =546
+            Y: =663
+      - TextCanvas10:
+          Control: Text@0.0.51
+          Properties:
+            Font: =Font.'Lato Black'
+            Height: =118
+            Size: =75
+            Text: ="Leave a comment."
+            Width: =811
+            X: =30
+            Y: =2
+      - TextCanvas12:
+          Control: Text@0.0.51
+          Properties:
+            Font: =Font.'Lato Black'
+            Height: =69
+            Size: =35
+            Text: ="Maximum of 45 characters."
+            Width: =445
+            X: =734
+            Y: =51
+      - Button3_9:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 1)
+            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+            Font: =Font.'Lato Black'
+            Height: =53
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(0, 0, 0, 100), -10%)
+            OnSelect: |-
+              =Navigate(
+                  'Community feed', ScreenTransition.Fade)
+            PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -50%)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =ColorFade(RGBA(0, 0, 0, 100), -30%)
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Size: =25
+            Text: ="Go back."
+            Width: =188
+            X: =68
+            Y: =663

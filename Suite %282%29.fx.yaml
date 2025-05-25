@@ -1,0 +1,47 @@
+"'c59590e3-c081-43ed-8624-ea0624ff7d99' As TestSuite":
+    Description: ="tst"
+    DisplayName: ="Suite (2)"
+
+    "'bde23afa-99aa-492f-b106-1c3f9469f47a' As TestCase":
+        Description: ="yes"
+        DisplayName: ="Case"
+
+        Step1 As TestStep:
+            Description: ="Set 'login_username'.Text to ""aayush"""
+            Screen: =login page
+            Value: =SetProperty('login_username'.Text, "aayush")
+
+        Step2 As TestStep:
+            Description: ="Set 'login_password'.Text to ""Diddy"""
+            Screen: =login page
+            Value: =SetProperty('login_password'.Text, "Diddy")
+
+        Step3 As TestStep:
+            Description: ="Select 'Button3'"
+            Screen: =login page
+            Value: =Select('Button3')
+
+        Step8 As TestStep:
+            Description: ="Select 'ButtonCanvas1_1'"
+            Value: =Select ('ButtonCanvas1_1')
+
+        Step4 As TestStep:
+            Description: ="Select 'Button3_7'"
+            Screen: =Community feed
+            Value: =Select('Button3_7')
+
+        Step5 As TestStep:
+            Description: ="Set 'post_contents'.Text to ""yo"""
+            Screen: =Post Page
+            Value: =SetProperty('post_contents'.Text, "yo")
+
+        Step6 As TestStep:
+            Description: ="Set 'post_title'.Text to ""to"""
+            Screen: =Post Page
+            Value: =SetProperty('post_title'.Text, "to")
+
+        Step7 As TestStep:
+            Description: ="Select 'Button3_6'"
+            Screen: =Post Page
+            Value: =Select('Button3_6')
+

@@ -1,0 +1,319 @@
+"PostEventPage As screen.'autoLayout_Sidebar_ver1.0'":
+    Fill: |-
+        =RGBA(
+            255,
+            255,
+            255,
+            1
+        )
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    ScreenContainer1 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(245, 245, 245, 1)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =16
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =16
+        PaddingLeft: =16
+        PaddingRight: =16
+        PaddingTop: =16
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =Parent.Width
+        ZIndex: =1
+
+        HeaderContainer1 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            Height: =75
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            ZIndex: =1
+
+            TextCanvas3 As Text:
+                Align: ='TextCanvas.Align'.Center
+                AlignInContainer: =AlignInContainer.Start
+                AutoHeight: =false
+                DisplayMode: =DisplayMode.Edit
+                Height: =73
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                PaddingTop: =7
+                Size: =40
+                Text: ="Post an Event"
+                Width: =1330
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+        Container7 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.Light
+            Height: =614
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =428
+            X: =40
+            Y: =40
+            ZIndex: =2
+
+            ButtonCanvas5_1 As Button:
+                AcceptsFocus: =true
+                AccessibleLabel: =""
+                Align: =""
+                Appearance: ="Primary"
+                BasePaletteColor: =RGBA(230, 230, 230, 1)
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontItalic: =false
+                FontSize: =30
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =68
+                Icon: =""
+                IconRotation: =0
+                IconStyle: ="Outline"
+                Layout: ="Icon before"
+                OnSelect: =false
+                TabIndex: =0
+                Text: ="Post"
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Width: =240
+                X: =534
+                Y: =558
+                ZIndex: =1
+
+    Container8 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =548
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =462
+        X: =18
+        Y: =111
+        ZIndex: =2
+
+        TextCanvas6 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =46
+            Size: =30
+            Text: |-
+                ="Event Title:"
+            Width: =382
+            X: =40
+            Y: =40
+            ZIndex: =1
+
+        TextCanvas6_1 As Text:
+            Align: ="Start"
+            AutoHeight: =false
+            BorderStyle: =""
+            ContentLanguage: =""
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontItalic: =false
+            FontStrikethrough: =false
+            FontUnderline: =false
+            Height: =46
+            Size: =30
+            TabIndex: =0
+            Text: |-
+                ="Event Date:"
+            Tooltip: =""
+            VerticalAlign: =""
+            Visible: =true
+            Weight: ="Regular"
+            Width: =382
+            Wrap: =true
+            X: =40
+            Y: =200
+            ZIndex: =2
+
+        "TextInputCanvas1_1 As 'Text input'":
+            AccessibleLabel: =""
+            Align: =""
+            Appearance: ="FilledDarker"
+            BorderStyle: =""
+            ContentLanguage: =""
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontItalic: =false
+            FontSize: =25
+            FontStrikethrough: =false
+            FontUnderline: =false
+            FontWeight: =""
+            Height: =64
+            MaxLength: =-1
+            Mode: ="SingleLine"
+            OnChange: =false
+            Placeholder: ="Enter your event date here..."
+            Required: =false
+            TabIndex: =0
+            Tooltip: =""
+            TriggerOutput: ="FocusOut"
+            Type: ="Text"
+            ValidationState: ="None"
+            Value: =""
+            Visible: =true
+            Width: =376
+            X: =40
+            Y: =262
+            ZIndex: =3
+
+        TextCanvas6_2 As Text:
+            Align: ="Start"
+            AutoHeight: =false
+            BorderStyle: =""
+            ContentLanguage: =""
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontItalic: =false
+            FontStrikethrough: =false
+            FontUnderline: =false
+            Height: =46
+            Size: =30
+            TabIndex: =0
+            Text: |-
+                ="Event Location:"
+            Tooltip: =""
+            VerticalAlign: =""
+            Visible: =true
+            Weight: ="Regular"
+            Width: =382
+            Wrap: =true
+            X: =40
+            Y: =386
+            ZIndex: =4
+
+        "TextInputCanvas1_2 As 'Text input'":
+            AccessibleLabel: =""
+            Align: =""
+            Appearance: ="FilledDarker"
+            BorderStyle: =""
+            ContentLanguage: =""
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontItalic: =false
+            FontSize: =25
+            FontStrikethrough: =false
+            FontUnderline: =false
+            FontWeight: =""
+            Height: =64
+            MaxLength: =-1
+            Mode: ="SingleLine"
+            OnChange: =false
+            Placeholder: ="Enter your event location here..."
+            Required: =false
+            TabIndex: =0
+            Tooltip: =""
+            TriggerOutput: ="FocusOut"
+            Type: ="Text"
+            ValidationState: ="None"
+            Value: =""
+            Visible: =true
+            Width: =376
+            X: =40
+            Y: =450
+            ZIndex: =5
+
+    "TextInputCanvas1 As 'Text input'":
+        DisplayMode: =DisplayMode.Edit
+        FontSize: =25
+        Height: =64
+        Placeholder: ="Enter your title here..."
+        Width: =376
+        X: =57
+        Y: =204
+        ZIndex: =3
+
+    Container1 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =548
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =820
+        X: =512
+        Y: =111
+        ZIndex: =4
+
+        TextCanvas7 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =42
+            Size: =30
+            Text: |-
+                ="Event Details:"
+            Width: =748
+            X: =40
+            Y: =40
+            ZIndex: =1
+
+        "TextInputCanvas1_3 As 'Text input'":
+            AccessibleLabel: =
+            Align: =Align.Left
+            Appearance: ="FilledDarker"
+            BorderStyle: =""
+            ContentLanguage: =""
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontItalic: =false
+            FontSize: =25
+            FontStrikethrough: =false
+            FontUnderline: =false
+            FontWeight: =""
+            Height: =400
+            MaxLength: =-1
+            Mode: ='TextInputCanvas.Mode'.Multiline
+            OnChange: =false
+            Placeholder: ="Enter your title here..."
+            Required: =false
+            TabIndex: =0
+            Tooltip: =""
+            TriggerOutput: ='TextInputCanvas.TriggerOutput'.FocusOut
+            Type: ="Text"
+            ValidationState: ="None"
+            Value: =""
+            Visible: =true
+            Width: =748
+            X: =40
+            Y: =106
+            ZIndex: =2
+
+    ButtonCanvas5 As Button:
+        BasePaletteColor: =RGBA(230, 230, 230, 1)
+        DisplayMode: =DisplayMode.Edit
+        FontSize: =30
+        Height: =68
+        OnSelect: |-
+            =
+            Navigate( 'EventsPage', ScreenTransition.Fade )
+        Text: ="Go Back"
+        Width: =240
+        X: =18
+        Y: =675
+        ZIndex: =5
+

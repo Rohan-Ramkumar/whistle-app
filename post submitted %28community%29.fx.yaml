@@ -1,0 +1,37 @@
+"'post submitted (community)' As screen":
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    TextCanvas1 As Text:
+        DisplayMode: =DisplayMode.Edit
+        Font: =Font.'Lato Black'
+        Height: =154
+        Size: =100
+        Text: ="Post Submitted!"
+        Weight: ='TextCanvas.Weight'.Semibold
+        Width: =786
+        X: =309
+        Y: =297
+        ZIndex: =1
+
+    Timer2 As timer:
+        AutoStart: =true
+        BorderColor: =RGBA(0, 120, 212, 1)
+        BorderStyle: =BorderStyle.None
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Duration: =2000
+        Fill: =RGBA(0, 120, 212, 1)
+        Font: =Font.'Segoe UI'
+        HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -10%)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(0, 120, 212, 1), -10%)
+        OnTimerEnd: =Navigate('Community feed', ScreenTransition.Fade)
+        PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+        Visible: =false
+        X: =40
+        Y: =40
+        ZIndex: =2
+

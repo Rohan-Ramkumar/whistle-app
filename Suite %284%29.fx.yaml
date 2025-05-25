@@ -1,0 +1,130 @@
+"'f6a30942-8cd1-4dc3-b05f-58be14530c1e' As TestSuite":
+    Description: ="Case 2"
+    DisplayName: ="Suite (4)"
+
+    "'492a9906-b2ce-4cd8-a48c-a53213a03423' As TestCase":
+        Description: ="Content Creation, user able to post. "
+        DisplayName: ="Case"
+
+        Step1 As TestStep:
+            Description: ="Set 'login_username'.Text to ""aayush"""
+            Screen: =login page
+            Value: =SetProperty('login_username'.Text, "aayush")
+
+        Step2 As TestStep:
+            Description: ="Set 'login_password'.Text to ""Diddy"""
+            Screen: =login page
+            Value: =SetProperty('login_password'.Text, "Diddy")
+
+        Step22 As TestStep:
+            Description: ="select button 3"
+            Screen: =login page
+            Value: =Select('Button3')
+
+        Step3 As TestStep:
+            Description: ="Select 'ButtonCanvas1_1'"
+            Screen: =login page
+            Value: =Select('ButtonCanvas1_1')
+
+        Step4 As TestStep:
+            Description: ="Select 'Button3_7'"
+            Screen: =login page
+            Value: =Select('Button3_7')
+
+        Step5 As TestStep:
+            Description: ="Set 'post_contents'.Text to ""ytyttffgg"""
+            Screen: =Post Page
+            Value: =SetProperty('post_contents'.Text, "ytyttffgg")
+
+        Step6 As TestStep:
+            Description: ="Select 'Button3_6'"
+            Screen: =Post Page
+            Value: =Select('Button3_6')
+
+        Step7 As TestStep:
+            Description: ="Set 'post_title_1'.Text to ""gurt"""
+            Screen: =no title post page
+            Value: =SetProperty('post_title_1'.Text, "gurt")
+
+        Step8 As TestStep:
+            Description: ="Select 'Button3_10'"
+            Screen: =no title post page
+            Value: =Select('Button3_10')
+
+        Step23 As TestStep:
+            Description: ="navigate lobby"
+            Value: =Navigate('Lobby')
+
+        Step25 As TestStep:
+            Description: ="New step"
+            Value: =Select('ButtonCanvas1_1')
+
+        Step9 As TestStep:
+            Description: ="Select 'Button3_7'"
+            Screen: =Community feed
+            Value: =Select('Button3_7')
+
+        Step10 As TestStep:
+            Description: ="Set 'post_contents'.Text to ""body"""
+            Screen: =Post Page
+            Value: =SetProperty('post_contents'.Text, "body")
+
+        Step11 As TestStep:
+            Description: ="Select 'post_title'"
+            Screen: =Post Page
+            Value: =Select('post_title')
+
+        Step12 As TestStep:
+            Description: ="Select 'AddMediaButton'"
+            Screen: =Post Page
+            Value: =Select('AddMediaButton')
+
+        Step13 As TestStep:
+            Description: ="Select 'Button3_6'"
+            Screen: =Post Page
+            Value: =Select('Button3_6')
+
+        Step14 As TestStep:
+            Description: ="Set 'post_title_1'.Text to ""valud"""
+            Screen: =no title post page
+            Value: =SetProperty('post_title_1'.Text, "valud")
+
+        Step15 As TestStep:
+            Description: ="Set 'post_contents_1'.Text to ""valud"""
+            Screen: =no title post page
+            Value: =SetProperty('post_contents_1'.Text, "valud")
+
+        Step16 As TestStep:
+            Description: ="Select 'Button3_10'"
+            Screen: =no title post page
+            Value: =Select('Button3_10')
+
+        Step24 As TestStep:
+            Description: ="New step"
+            Value: =Navigate('Lobby')
+
+        Step17 As TestStep:
+            Description: ="Select 'Button3_7'"
+            Screen: =Community feed
+            Value: =Select('Button3_7')
+
+        Step18 As TestStep:
+            Description: ="Set 'post_title'.Text to ""sui"""
+            Screen: =Post Page
+            Value: =SetProperty('post_title'.Text, "sui")
+
+        Step19 As TestStep:
+            Description: ="Set 'post_contents'.Text to ""mesis"""
+            Screen: =Post Page
+            Value: =SetProperty('post_contents'.Text, "mesis")
+
+        Step20 As TestStep:
+            Description: ="Select 'AddMediaButton'"
+            Screen: =Post Page
+            Value: =Select('AddMediaButton')
+
+        Step21 As TestStep:
+            Description: ="Select 'Button3_6'"
+            Screen: =Post Page
+            Value: =Select('Button3_6')
+

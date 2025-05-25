@@ -1,0 +1,345 @@
+PostPage As screen:
+    Height: =814
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+    OnVisible: =
+    Width: =1280
+
+    Button1_9 As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(217, 217, 217, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(196, 196, 196, 1)
+        OnSelect: =Navigate('Community feed')
+        PressedBorderColor: =RGBA(196, 196, 196, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: = RGBA(196, 196, 196, 100)
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Size: =25
+        Text: ="Go back"
+        Width: =180
+        X: =10
+        Y: =732
+        ZIndex: =1
+
+    Rectangle2_1 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledFill: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(196, 196, 196, 1)
+        FocusedBorderThickness: =4
+        Height: =708
+        HoverFill: =RGBA(196, 196, 196, 1)
+        PressedFill: =RGBA(196, 196, 196, 1)
+        Width: =817
+        Y: =106
+        ZIndex: =2
+
+    "'post title' As Text":
+        DisplayMode: =DisplayMode.Edit
+        Font: =Font.'Lato Black'
+        Height: =97
+        Size: =65
+        Text: =selectedPost.post_title
+        Weight: ='TextCanvas.Weight'.Semibold
+        Width: =690
+        X: =20
+        Y: =12
+        ZIndex: =3
+
+    date As Text:
+        DisplayMode: =DisplayMode.Edit
+        Font: =Font.'Lato Black'
+        Height: =77
+        Size: =35
+        Text: =Text(selectedPost.post_date, "dd mmm yyyy")
+        Weight: ='TextCanvas.Weight'.Semibold
+        Width: =239
+        X: =578
+        Y: =122
+        ZIndex: =4
+
+    author As Text:
+        DisplayMode: =DisplayMode.Edit
+        Font: =Font.'Lato Black'
+        Height: =62
+        Size: =30
+        Text: =selectedPost.post_author
+        Weight: ='TextCanvas.Weight'.Semibold
+        Width: =262
+        X: =20
+        Y: =122
+        ZIndex: =5
+
+    postcontents As Text:
+        DisplayMode: =DisplayMode.Edit
+        Height: =286
+        Size: =28
+        Text: =selectedPost.post_contents
+        Width: =763
+        X: =20
+        Y: =242
+        ZIndex: =6
+
+    "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        BorderColor: =RGBA(166, 166, 166, 1)
+        DelayItemLoading: =true
+        Fill: =RGBA(217, 217, 217, 1)
+        Height: =495
+        Items: |
+            =Filter(
+                'Stored data',
+                post_id = selectedPost.post_id && !IsBlank(comment_text)
+            )
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =104
+        Visible: =!IsEmpty(Gallery2.AllItems)
+        Width: =465
+        X: =816
+        Y: =106
+        ZIndex: =7
+
+        "'comment contents' As label":
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =Font.'Segoe UI'
+            Height: =60
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =18
+            Text: =ThisItem.comment_text
+            VerticalAlign: =VerticalAlign.Top
+            Width: =418
+            X: =15
+            Y: =36
+            ZIndex: =2
+
+        "'comment author' As label":
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =Font.'Segoe UI'
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.comment_author
+            VerticalAlign: =VerticalAlign.Top
+            Width: ='comment contents'.Width
+            X: =15
+            Y: =15
+            ZIndex: =3
+
+        Separator2 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+    TextCanvas9 As Text:
+        DisplayMode: =DisplayMode.Edit
+        Font: =Font.'Lato Black'
+        Height: =113
+        Size: =75
+        Text: ="Comments."
+        Weight: ='TextCanvas.Weight'.Semibold
+        Width: =409
+        X: =845
+        Y: =4
+        ZIndex: =8
+
+    Button1_11 As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(217, 217, 217, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =64
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(196, 196, 196, 1)
+        OnSelect: =Navigate('comment post', ScreenTransition.Fade)
+        PressedBorderColor: =RGBA(196, 196, 196, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: = RGBA(196, 196, 196, 100)
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Size: =20
+        Text: ="Leave a comment."
+        Width: =237
+        X: =1032
+        Y: =724
+        ZIndex: =9
+
+    Button1_12 As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(217, 217, 217, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(196, 196, 196, 1)
+        OnSelect: =Navigate('Community feed', ScreenTransition.Fade)
+        PressedBorderColor: =RGBA(196, 196, 196, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: = RGBA(196, 196, 196, 100)
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Size: =15
+        Text: ="Go back"
+        X: =20
+        Y: =738
+        ZIndex: =10
+
+    Image5 As image:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =232
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: =selectedPost.post_image
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =246
+        X: =200
+        Y: =581
+        ZIndex: =11
+
+    Image6 As image:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =232
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: =selectedPost.post_image_2
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =252
+        X: =565
+        Y: =581
+        ZIndex: =12
+
+    ButtonCanvas2 As Button:
+        Appearance: ='ButtonCanvas.Appearance'.Transparent
+        BasePaletteColor: =
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =If(liked,RGBA(11, 156, 49, 1)  , RGBA(0, 0, 0, 1))
+        FontSize: =100
+        Height: =65
+        Icon: ="Money"
+        IconStyle: ='ButtonCanvas.IconStyle'.Outline
+        Layout: ='ButtonCanvas.Layout'.IconOnly
+        OnSelect: |
+            =UpdateContext({ liked: !liked });
+            
+            Patch(
+                'Stored data',
+                selectedPost,
+                {
+                    post_likes: If(
+                        !liked, 
+                        selectedPost.post_likes - 1, 
+                        selectedPost.post_likes + 1
+                    )
+                }
+            )
+        Width: =83
+        X: =900
+        Y: =664
+        ZIndex: =13
+
+    TextCanvas15 As Text:
+        DisplayMode: =DisplayMode.Edit
+        Font: =Font.'Lato Black'
+        Height: =55
+        Size: =30
+        Text: ="Money This Post."
+        Width: =259
+        X: =831
+        Y: =618
+        ZIndex: =14
+
+    TextCanvas16 As Text:
+        Align: ='TextCanvas.Align'.Center
+        BorderRadius: =100
+        BorderStyle: =BorderStyle.Solid
+        BorderThickness: =2
+        DisplayMode: =DisplayMode.Edit
+        Font: =Font.'Lato Black'
+        Height: =45
+        Size: =25
+        Text: =Text(selectedPost.post_likes)
+        VerticalAlign: =VerticalAlign.Middle
+        Width: =45
+        X: =919
+        Y: =732
+        ZIndex: =17
+
+    TextCanvas4_1 As Text:
+        Align: ="Start"
+        AutoHeight: =false
+        BorderStyle: =""
+        ContentLanguage: =""
+        DisplayMode: =DisplayMode.Edit
+        Font: =Font.'Lato Black'
+        FontColor: =RGBA(196, 196, 196, 1)
+        FontItalic: =false
+        FontStrikethrough: =false
+        FontUnderline: =false
+        Height: =285
+        Size: =50
+        TabIndex: =0
+        Text: ="Cricket Noises..."
+        Tooltip: =""
+        VerticalAlign: =""
+        Visible: =IsEmpty(Gallery2.AllItems)
+        Weight: ='TextCanvas.Weight'.Semibold
+        Width: =347
+        Wrap: =true
+        X: =919
+        Y: =240
+        ZIndex: =18
+

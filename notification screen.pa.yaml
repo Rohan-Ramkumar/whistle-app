@@ -1,0 +1,178 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  notification screen:
+    Properties:
+      Fill: =RGBA(255, 255, 255, 1)
+      LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+    Children:
+      - TextCanvas18:
+          Control: Text@0.0.51
+          Properties:
+            Font: =Font.'Lato Black'
+            FontColor: =RGBA(0, 0, 0, 1)
+            Height: =131
+            Size: =80
+            Text: ="Notifications."
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =563
+            X: =36
+            Y: =34
+      - Gallery4:
+          Control: Gallery@2.15.0
+          Variant: BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0
+          Properties:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(196, 196, 196, 1)
+            Items: |-
+              =Filter(
+                  'Stored data',
+                  mentioned_user = currentUserName && 
+                      !IsBlank(notification_text) &&  notification_seen = false
+              )
+            OnSelect: |-
+              =Patch(
+                  'Stored data',
+                  ThisItem,
+                  { notification_seen: true }
+              );UpdateContext({ currentPostID: ThisItem.post_id });
+              Navigate(PostPage, ScreenTransition.Fade);
+            Visible: |
+              =!IsEmpty(Gallery4.AllItems)
+            Width: =1050
+            X: =144
+            Y: =147
+          Children:
+            - Image2:
+                Control: Image@2.2.3
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  BorderThickness: =2
+                  DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                  DisabledFill: =RGBA(0, 0, 0, 0)
+                  FocusedBorderThickness: =4
+                  Height: =72
+                  HoverBorderColor: =RGBA(0, 0, 0, 0)
+                  HoverFill: =RGBA(0, 0, 0, 0)
+                  Image: |-
+                    =LookUp(
+                       'Stored data',
+                       post_id = ThisItem.post_id,
+                       post_image
+                    )
+                  OnSelect: =Select(Parent)
+                  PressedBorderColor: =RGBA(0, 0, 0, 0)
+                  PressedFill: =RGBA(0, 0, 0, 0)
+                  RadiusBottomLeft: =8
+                  RadiusBottomRight: =8
+                  RadiusTopLeft: =8
+                  RadiusTopRight: =8
+                  Width: =72
+                  X: =16
+                  Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            - Title2:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(50, 49, 48, 1)
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =61
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =25
+                  Text: |
+                    =ThisItem.notification_text
+                  Width: =Parent.TemplateWidth - 173
+                  X: =99
+            - NextArrow3:
+                Control: Classic/Icon@2.5.0
+                Properties:
+                  AccessibleLabel: =Self.Tooltip
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(166, 166, 166, 1)
+                  DisabledBorderColor: =RGBA(56, 56, 56, 1)
+                  DisabledColor: =RGBA(119, 119, 119, 1)
+                  FocusedBorderThickness: =4
+                  Height: =50
+                  Icon: =Icon.ChevronRight
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =16
+                  PaddingLeft: =16
+                  PaddingRight: =16
+                  PaddingTop: =16
+                  Tooltip: ="View item details"
+                  Width: =50
+                  X: =Parent.TemplateWidth - Self.Width - 12
+                  Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            - Separator4:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =8
+                  OnSelect: =Select(Parent)
+                  Width: =Parent.TemplateWidth
+                  Y: =Parent.TemplateHeight - Self.Height
+            - notif date:
+                Control: Text@0.0.51
+                Properties:
+                  Font: =Font.Lato
+                  FontColor: =RGBA(0, 0, 0, 1)
+                  Height: =35
+                  Size: =20
+                  Text: =Text(ThisItem.notification_date, "dd/mm/ yyyy")
+                  Weight: ='TextCanvas.Weight'.Semibold
+                  Width: =180
+                  X: =99
+                  Y: =61
+      - TextCanvas20:
+          Control: Text@0.0.51
+          Properties:
+            Font: =Font.'Lato Black'
+            FontColor: =RGBA(196, 196, 196, 1)
+            Height: =229
+            Size: =100
+            Text: ="Cricket Noises..."
+            Visible: |
+              =IsEmpty(Gallery4.AllItems)
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =950
+            X: =280
+            Y: =274
+      - Button1_13:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(217, 217, 217, 1)
+            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+            Font: =Font.'Segoe UI'
+            Height: =52
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(196, 196, 196, 1)
+            OnSelect: =Navigate(Lobby, ScreenTransition.Fade)
+            PressedBorderColor: =RGBA(196, 196, 196, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: = RGBA(196, 196, 196, 100)
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Size: =25
+            Text: ="Go back"
+            Width: =180
+            X: =1103
+            Y: =73

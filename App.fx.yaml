@@ -1,0 +1,18 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |
+        =ClearCollect(PostData, {Title: "", Body: ""});
+    StartScreen: |-
+        =If(
+            Param("redirect") = "password reset",
+            'password reset',
+            'login page'  // or your default screen
+        )
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

@@ -1,0 +1,127 @@
+EventsPage As screen:
+    Fill: =
+    Height: =832
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+    Width: =1280
+
+    Events As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Lato'
+        Height: =148
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =72
+        Text: ="Events"
+        VerticalAlign: =VerticalAlign.Top
+        Width: =513
+        Y: =26
+        ZIndex: =1
+
+    "'Rectangle 47' As rectangle":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        DisabledFill: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(217, 217, 217, 1)
+        FocusedBorderThickness: =4
+        Height: =55
+        HoverFill: =RGBA(0, 120, 212, 1)
+        PressedFill: =RGBA(0, 120, 212, 1)
+        Width: =222
+        X: =1035
+        Y: =703
+        ZIndex: =42
+
+    "'Go back_9' As label":
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Height: =48
+        LineHeight: =1.6899414
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =24
+        Text: ="Go back"
+        VerticalAlign: =VerticalAlign.Top
+        Width: =108
+        X: =1094
+        Y: =705
+        ZIndex: =43
+
+    "'flat-icon-in-black-and-white-loudspeaker-vector-9270941-removebg-preview 1' As image":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =186
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: =image21288
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =201
+        X: =395
+        ZIndex: =56
+
+    AddEventButton As Button:
+        Appearance: ='ButtonCanvas.Appearance'.Primary
+        BasePaletteColor: =RGBA(167, 167, 167, 1)
+        BorderRadius: =15
+        DisplayMode: =DisplayMode.Edit
+        FontSize: =30
+        FontWeight: =FontWeight.Bold
+        Height: =62
+        OnSelect: |
+            =Navigate( 'Password for events post page', ScreenTransition.Fade )
+        Text: ="Add Event"
+        Width: =284
+        X: =958
+        Y: =44
+        ZIndex: =57
+
+    CalenderButton As Button:
+        AcceptsFocus: =true
+        AccessibleLabel: =""
+        Align: =""
+        Appearance: ='ButtonCanvas.Appearance'.Primary
+        BasePaletteColor: =RGBA(0, 0, 1, 1)
+        BorderRadius: =15
+        BorderStyle: =""
+        ContentLanguage: =""
+        DisplayMode: =DisplayMode.Edit
+        Font: =""
+        FontItalic: =false
+        FontSize: =30
+        FontStrikethrough: =false
+        FontUnderline: =false
+        FontWeight: =FontWeight.Bold
+        Height: =68
+        Icon: =""
+        IconRotation: =0
+        IconStyle: ="Outline"
+        Layout: ="Icon before"
+        OnSelect: =false
+        TabIndex: =0
+        Text: ="Calendar"
+        Tooltip: =""
+        VerticalAlign: =""
+        Visible: =true
+        Width: =284
+        X: =26
+        Y: =695
+        ZIndex: =58
+

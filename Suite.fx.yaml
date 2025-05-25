@@ -1,0 +1,185 @@
+"'c2aec790-0c2c-4b06-a810-ff31cd11a4b6' As TestSuite":
+    Description: =""
+    DisplayName: ="Suite"
+
+    "'69d55bcf-27ea-40fd-90ea-ecf5244167a6' As TestCase":
+        Description: ="Login  Page"
+        DisplayName: ="Case 1"
+
+        Step1 As TestStep:
+            Description: ="Set 'login_username'.Text to ""Rohan"""
+            Screen: =login page
+            Value: =SetProperty('login_username'.Text, "Rohan")
+
+        Step2 As TestStep:
+            Description: ="Set 'login_password'.Text to ""Diddy"""
+            Screen: =login page
+            Value: =SetProperty('login_password'.Text, "Diddy")
+
+        Step3 As TestStep:
+            Description: ="Select 'Button3'"
+            Screen: =login page
+            Value: =Select('Button3')
+
+        Step4 As TestStep:
+            Description: ="Set 'login_username_1'.Text to ""aayush"""
+            Screen: =failed login
+            Value: =SetProperty('login_username_1'.Text, "aayush")
+
+        Step5 As TestStep:
+            Description: ="Set 'login_password_1'.Text to ""rohan"""
+            Screen: =failed login
+            Value: =SetProperty('login_password_1'.Text, "rohan")
+
+        Step6 As TestStep:
+            Description: ="Select 'Button3_1'"
+            Screen: =failed login
+            Value: =Select('Button3_1')
+
+        Step7 As TestStep:
+            Description: ="Set 'login_username_1'.Text to ""aayush"""
+            Screen: =failed login
+            Value: =SetProperty('login_username_1'.Text, "aayush")
+
+        Step8 As TestStep:
+            Description: ="Set 'login_password_1'.Text to ""Diddy"""
+            Screen: =failed login
+            Value: =SetProperty('login_password_1'.Text, "Diddy")
+
+        Step9 As TestStep:
+            Description: ="Select 'Button3_1'"
+            Screen: =failed login
+            Value: =Select('Button3_1')
+
+    "'4163e6c5-9d95-477f-95ac-b09b3eee9bdc' As TestCase":
+        Description: ="Forgot Password"
+        DisplayName: ="Case 3"
+
+        Step1 As TestStep:
+            Description: ="Select 'Button4'"
+            Screen: =login page
+            Value: =Select('Button4')
+
+        Step2 As TestStep:
+            Description: ="Select 'Button2_3'"
+            Screen: =forgot password
+            Value: =Select('Button2_3')
+
+        Step3 As TestStep:
+            Description: ="Set 'ResetEmail_1'.Text to ""sakhum24@gmail.com"""
+            Screen: =no account found
+            Value: =SetProperty('ResetEmail_1'.Text, "sakhum24@gmail.com")
+
+        Step4 As TestStep:
+            Description: ="Select 'Button2_6'"
+            Screen: =no account found
+            Value: =Select('Button2_6')
+
+        Step5 As TestStep:
+            Description: ="Set 'ResetEmail_1'.Text to ""aayush.bipin1270@gmail.com"""
+            Screen: =no account found
+            Value: =SetProperty('ResetEmail_1'.Text, "aayush.bipin1270@gmail.com")
+
+        Step6 As TestStep:
+            Description: ="Select 'Button2_6'"
+            Screen: =no account found
+            Value: =Select('Button2_6')
+
+    "'f678b6b5-4bda-4867-9216-3b590fb81a8b' As TestCase":
+        Description: =""
+        DisplayName: ="Case 4"
+
+        Step1 As TestStep:
+            Description: ="Select 'Button4_1'"
+            Screen: =login page
+            Value: =Select('Button4_1')
+
+        Step2 As TestStep:
+            Description: ="Set 'desired_username'.Text to ""jas"""
+            Screen: =create account
+            Value: =SetProperty('desired_username'.Text, "jas")
+
+        Step3 As TestStep:
+            Description: ="Set 'Email'.Text to ""jas123@gmail.com"""
+            Screen: =create account
+            Value: =SetProperty('Email'.Text, "jas123@gmail.com")
+
+        Step4 As TestStep:
+            Description: ="Set 'Created Password'.Text to ""jassi"""
+            Screen: =create account
+            Value: =SetProperty('Created Password'.Text, "jassi")
+
+        Step5 As TestStep:
+            Description: ="Set 'reentered password'.Text to ""jas"""
+            Screen: =create account
+            Value: =SetProperty('reentered password'.Text, "jas")
+
+        Step6 As TestStep:
+            Description: ="Select 'Button2_1'"
+            Screen: =create account
+            Value: =Select('Button2_1')
+
+        Step7 As TestStep:
+            Description: ="Set 'desired_username_1'.Text to ""roh"""
+            Screen: =non password match
+            Value: =SetProperty('desired_username_1'.Text, "roh")
+
+        Step8 As TestStep:
+            Description: ="Set 'Email_1'.Text to ""roh23@gmail.com"""
+            Screen: =non password match
+            Value: =SetProperty('Email_1'.Text, "roh23@gmail.com")
+
+        Step9 As TestStep:
+            Description: ="Set 'Created Password_1'.Text to ""rohan22"""
+            Screen: =non password match
+            Value: =SetProperty('Created Password_1'.Text, "rohan22")
+
+        Step10 As TestStep:
+            Description: ="Set 'reentered password_1'.Text to ""rohan22"""
+            Screen: =non password match
+            Value: =SetProperty('reentered password_1'.Text, "rohan22")
+
+        Step11 As TestStep:
+            Description: ="Select 'Button2_2'"
+            Screen: =non password match
+            Value: =Select('Button2_2')
+
+    "'5a8edba1-d6c8-4815-b84e-98c5745bb98f' As TestCase":
+        Description: =""
+        DisplayName: ="Case 5"
+
+        Step1 As TestStep:
+            Description: ="Set 'login_username'.Text to ""aayush"""
+            Screen: =login page
+            Value: =SetProperty('login_username'.Text, "aayush")
+
+        Step2 As TestStep:
+            Description: ="Set 'login_password'.Text to ""Diddy"""
+            Screen: =login page
+            Value: =SetProperty('login_password'.Text, "Diddy")
+
+        Step3 As TestStep:
+            Description: ="Select 'Button3'"
+            Screen: =login page
+            Value: =Select('Button3')
+
+        Step4 As TestStep:
+            Description: ="Select 'NextArrow1' in row 4 in 'Gallery1'"
+            Screen: =Community feed
+            Value: =Select('Gallery1', 4, 'NextArrow1')
+
+        Step5 As TestStep:
+            Description: ="Select 'Button1_11'"
+            Screen: =PostPage
+            Value: =Select('Button1_11')
+
+        Step6 As TestStep:
+            Description: ="Select 'Button3_8'"
+            Screen: =comment post
+            Value: =Select('Button3_8')
+
+        Step7 As TestStep:
+            Description: ="Select 'Button1_10'"
+            Screen: =Community feed
+            Value: =Select('Button1_10')
+

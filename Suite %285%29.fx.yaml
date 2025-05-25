@@ -1,0 +1,52 @@
+"'1d96d358-37aa-4047-838e-00f58948091e' As TestSuite":
+    Description: ="Case 4"
+    DisplayName: ="Suite (5)"
+
+    "'e737668b-92ea-4ee0-a41a-1e05bbc5b9a1' As TestCase":
+        Description: ="Allowing a user to comment"
+        DisplayName: ="Case"
+
+        Step1 As TestStep:
+            Description: ="Set 'login_username'.Text to ""aayush"""
+            Screen: =login page
+            Value: =SetProperty('login_username'.Text, "aayush")
+
+        Step2 As TestStep:
+            Description: ="Set 'login_password'.Text to ""Diddy"""
+            Screen: =login page
+            Value: =SetProperty('login_password'.Text, "Diddy")
+
+        Step3 As TestStep:
+            Description: ="Select 'Button3'"
+            Screen: =login page
+            Value: =Select('Button3')
+
+        Step9 As TestStep:
+            Description: ="Select ButtonCanvas1_1"
+            Value: =Select('ButtonCanvas1_1')
+
+        Step4 As TestStep:
+            Description: ="Select 'NextArrow1' in row 1 in 'Gallery1'"
+            Screen: =Community feed
+            Value: =Select('Gallery1', 1, 'NextArrow1')
+
+        Step5 As TestStep:
+            Description: ="Select 'Button1_11'"
+            Screen: =PostPage
+            Value: =Select('Button1_11')
+
+        Step6 As TestStep:
+            Description: ="Select 'Button3_8'"
+            Screen: =comment post
+            Value: =Select('Button3_8')
+
+        Step7 As TestStep:
+            Description: ="Set 'txtComment'.Text to ""yo"""
+            Screen: =comment post
+            Value: =SetProperty('txtComment'.Text, "yo")
+
+        Step8 As TestStep:
+            Description: ="Select 'Button3_8'"
+            Screen: =comment post
+            Value: =Select('Button3_8')
+

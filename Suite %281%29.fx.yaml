@@ -1,0 +1,68 @@
+"'4d599e52-b950-4161-9090-99f5d853da30' As TestSuite":
+    Description: ="test"
+    DisplayName: ="Suite (1)"
+
+    "'26f19497-1188-40d0-90c9-2077db9cc477' As TestCase":
+        Description: ="test"
+        DisplayName: ="Case"
+
+        Step1 As TestStep:
+            Description: ="Set 'login_username'.Text to ""jasperw"""
+            Screen: =login page
+            Value: =SetProperty('login_username'.Text, "jasperw")
+
+        Step2 As TestStep:
+            Description: ="Set 'login_password'.Text to ""123"""
+            Screen: =login page
+            Value: =SetProperty('login_password'.Text, "123")
+
+        Step3 As TestStep:
+            Description: ="Select 'Button3'"
+            Screen: =login page
+            Value: =Select('Button3')
+
+        Step4 As TestStep:
+            Description: ="Set 'login_username_1'.Text to ""aayush"""
+            Screen: =failed login
+            Value: =SetProperty('login_username_1'.Text, "aayush")
+
+        Step5 As TestStep:
+            Description: ="Set 'login_password_1'.Text to ""Diddy"""
+            Screen: =failed login
+            Value: =SetProperty('login_password_1'.Text, "Diddy")
+
+        Step6 As TestStep:
+            Description: ="Select 'Button3_1'"
+            Screen: =failed login
+            Value: =Select('Button3_1')
+
+        Step7 As TestStep:
+            Description: ="Select 'Button3_7'"
+            Screen: =Lobby
+            Value: =Select('Button3_7')
+
+        Step8 As TestStep:
+            Description: ="Select 'post_contents'"
+            Screen: =Post Page
+            Value: =Select('post_contents')
+
+        Step9 As TestStep:
+            Description: ="Set 'post_title'.Text to ""gurt"""
+            Screen: =Post Page
+            Value: =SetProperty('post_title'.Text, "gurt")
+
+        Step10 As TestStep:
+            Description: ="Set 'post_contents'.Text to ""yo"""
+            Screen: =Post Page
+            Value: =SetProperty('post_contents'.Text, "yo")
+
+        Step11 As TestStep:
+            Description: ="Select 'Button3_6'"
+            Screen: =Post Page
+            Value: =Select('Button3_6')
+
+        Step12 As TestStep:
+            Description: ="Select 'NextArrow1' in row 13 in 'Gallery1'"
+            Screen: =Community feed
+            Value: =Select('Gallery1', 13, 'NextArrow1')
+

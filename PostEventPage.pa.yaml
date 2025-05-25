@@ -1,0 +1,186 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  PostEventPage:
+    Properties:
+      Fill: |-
+        =RGBA(
+            255,
+            255,
+            255,
+            1
+        )
+      LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+    Children:
+      - ScreenContainer1:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            Fill: =RGBA(245, 245, 245, 1)
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =16
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Width: =Parent.Width
+          Children:
+            - HeaderContainer1:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0
+                  Height: =75
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  RadiusBottomLeft: =8
+                  RadiusBottomRight: =8
+                  RadiusTopLeft: =8
+                  RadiusTopRight: =8
+                Children:
+                  - TextCanvas3:
+                      Control: Text@0.0.51
+                      Properties:
+                        Align: ='TextCanvas.Align'.Center
+                        AlignInContainer: =AlignInContainer.Start
+                        Height: =73
+                        PaddingTop: =7
+                        Size: =40
+                        Text: ="Post an Event"
+                        Width: =1330
+            - Container7:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  Height: =614
+                  Width: =428
+                  X: =40
+                  Y: =40
+                Children:
+                  - ButtonCanvas5_1:
+                      Control: Button@0.0.45
+                      Properties:
+                        BasePaletteColor: =RGBA(230, 230, 230, 1)
+                        FontSize: =30
+                        Height: =68
+                        Text: ="Post"
+                        Width: =240
+                        X: =534
+                        Y: =558
+      - Container8:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =548
+            Width: =462
+            X: =18
+            Y: =111
+          Children:
+            - TextCanvas6:
+                Control: Text@0.0.51
+                Properties:
+                  Height: =46
+                  Size: =30
+                  Text: ="Event Title:"
+                  Width: =382
+                  X: =40
+                  Y: =40
+            - TextCanvas6_1:
+                Control: Text@0.0.51
+                Properties:
+                  Height: =46
+                  Size: =30
+                  Text: ="Event Date:"
+                  Width: =382
+                  X: =40
+                  Y: =200
+            - TextInputCanvas1_1:
+                Control: TextInput@0.0.54
+                Properties:
+                  FontSize: =25
+                  Height: =64
+                  Placeholder: ="Enter your event date here..."
+                  Width: =376
+                  X: =40
+                  Y: =262
+            - TextCanvas6_2:
+                Control: Text@0.0.51
+                Properties:
+                  Height: =46
+                  Size: =30
+                  Text: ="Event Location:"
+                  Width: =382
+                  X: =40
+                  Y: =386
+            - TextInputCanvas1_2:
+                Control: TextInput@0.0.54
+                Properties:
+                  FontSize: =25
+                  Height: =64
+                  Placeholder: ="Enter your event location here..."
+                  Width: =376
+                  X: =40
+                  Y: =450
+      - TextInputCanvas1:
+          Control: TextInput@0.0.54
+          Properties:
+            FontSize: =25
+            Height: =64
+            Placeholder: ="Enter your title here..."
+            Width: =376
+            X: =57
+            Y: =204
+      - Container1:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =548
+            Width: =820
+            X: =512
+            Y: =111
+          Children:
+            - TextCanvas7:
+                Control: Text@0.0.51
+                Properties:
+                  Height: =42
+                  Size: =30
+                  Text: ="Event Details:"
+                  Width: =748
+                  X: =40
+                  Y: =40
+            - TextInputCanvas1_3:
+                Control: TextInput@0.0.54
+                Properties:
+                  AccessibleLabel: =
+                  Align: =Align.Left
+                  FontSize: =25
+                  Height: =400
+                  Mode: ='TextInputCanvas.Mode'.Multiline
+                  Placeholder: ="Enter your title here..."
+                  TriggerOutput: ='TextInputCanvas.TriggerOutput'.FocusOut
+                  Width: =748
+                  X: =40
+                  Y: =106
+      - ButtonCanvas5:
+          Control: Button@0.0.45
+          Properties:
+            BasePaletteColor: =RGBA(230, 230, 230, 1)
+            FontSize: =30
+            Height: =68
+            OnSelect: |-
+              =
+              Navigate( 'EventsPage', ScreenTransition.Fade )
+            Text: ="Go Back"
+            Width: =240
+            X: =18
+            Y: =675

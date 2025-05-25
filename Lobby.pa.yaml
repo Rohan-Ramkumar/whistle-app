@@ -1,0 +1,192 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Lobby:
+    Properties:
+      Fill: =RGBA(255, 255, 255, 1)
+      Height: =832
+      LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+      Width: =1280
+    Children:
+      - Rectangle 5:
+          Control: Rectangle@2.3.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DisabledFill: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(217, 217, 217, 1)
+            FocusedBorderThickness: =4
+            Height: =588
+            HoverFill: =RGBA(217, 217, 217, 1)
+            PressedFill: =RGBA(217, 217, 217, 1)
+            Width: =1280
+            Y: =250
+      - flat-icon-in-black-and-white-loudspeaker-vector-9270941-removebg-preview 1_3:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =236
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =image2042
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =219
+            X: =344
+            Y: =391
+      - images-removebg-preview 1_2:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =274
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =image2044
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =274
+            X: =700
+            Y: =218
+      - whistle_3:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Font: =Font.'Lato Black'
+            Height: =86
+            LineHeight: =1.345
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =48
+            Text: ="whistle."
+            VerticalAlign: =VerticalAlign.Top
+            Width: =236
+            X: =14
+            Y: =14
+      - Label4:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Font: =Font.'Lato Black'
+            FontWeight: =FontWeight.Semibold
+            Height: =92
+            Size: =30
+            Text: =currentUserName
+            Width: =244
+            X: =6
+            Y: =100
+      - ButtonCanvas1:
+          Control: Button@0.0.45
+          Properties:
+            Appearance: ='ButtonCanvas.Appearance'.Transparent
+            BorderStyle: =BorderStyle.None
+            Font: =Font.'Lato Black'
+            FontColor: =RGBA(0, 0, 0, 1)
+            FontSize: =80
+            Height: =162
+            IconStyle: ='ButtonCanvas.IconStyle'.Outline
+            OnSelect: =Navigate('EventsPage', ScreenTransition.Fade)
+            Text: ="Events."
+            Width: =288
+            X: =6
+            Y: =428
+      - ButtonCanvas1_1:
+          Control: Button@0.0.45
+          Properties:
+            Appearance: ='ButtonCanvas.Appearance'.Transparent
+            BorderStyle: =BorderStyle.None
+            Font: =Font.'Lato Black'
+            FontColor: =RGBA(0, 0, 0, 1)
+            FontSize: =80
+            Height: =162
+            IconStyle: ='ButtonCanvas.IconStyle'.Outline
+            OnSelect: =Navigate('Community feed', ScreenTransition.Fade)
+            Text: ="Community Feed."
+            Width: =677
+            Y: =250
+      - ButtonCanvas3:
+          Control: Button@0.0.45
+          Properties:
+            Appearance: ='ButtonCanvas.Appearance'.Transparent
+            FontColor: =RGBA(0, 0, 0, 1)
+            FontSize: =75
+            Height: =59
+            Icon: ="ServiceBell"
+            Layout: ='ButtonCanvas.Layout'.IconOnly
+            OnSelect: =Navigate('notification screen', ScreenTransition.Fade)
+            Width: =106
+            X: =1069
+            Y: =27
+      - TextCanvas17:
+          Control: Text@0.0.51
+          Properties:
+            Align: ='TextCanvas.Align'.Center
+            BorderRadius: =100
+            BorderStyle: =BorderStyle.Solid
+            Fill: =RGBA(255, 0, 0, 1)
+            FontColor: =RGBA(255, 255, 255, 1)
+            Height: =25
+            Text: |-
+              =CountRows(
+                  Filter('Stored data', 
+                      mentioned_user = currentUserName && 
+                      notification_seen = false
+                  )
+              )
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =25
+            X: =1150
+            Y: =75
+      - Button2_4:
+          Control: Classic/Button@2.2.0
+          Properties:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 1)
+            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+            Font: =Font.Lato
+            Height: =56
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(0, 0, 0, 100), -10%)
+            OnSelect: |-
+              =
+              Navigate('login page', ScreenTransition.Fade)
+            PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -50%)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =ColorFade(RGBA(0, 0, 0, 100), -30%)
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Size: =30
+            Text: ="Log out."
+            Width: =190
+            X: =33
+            Y: =627
